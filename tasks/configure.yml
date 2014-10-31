@@ -3,6 +3,12 @@
   notify:
     - restart consul
 
+- name: add services configurations
+  template: src=service.json dest={{consul_conf_dir}}/{{item.name}}.json owner=consul group=consul
+  with_items: "{{ consul_services }}"
+  notify:
+    - restart consul
+
 - name: Add server configuration
   template: src=server.json dest={{consul_conf_dir}}/server.json owner=consul group=consul
   when: consul_server
