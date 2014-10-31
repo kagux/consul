@@ -18,3 +18,4 @@ consul_bootstrap_expect: 2
 consul_server: false
 supervisord_config_dir: /etc/supervisor.d
 consul_join: []
+consul_services: []

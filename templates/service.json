@@ -1,0 +1,7 @@
+{
+  "service": {
+    "name": "{{ item.name }}",
+    "tags": [{% for tag in item.tags %} "{{tag}}" {% if not loop.last %}, {% endif %}{% endfor %}],
+    "port": 8000
+  }
+}
